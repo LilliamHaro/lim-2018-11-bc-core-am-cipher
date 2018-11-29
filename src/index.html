@@ -2,13 +2,54 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/fontello.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cairo:400,700&amp;subset=arabic,latin-ext" rel="stylesheet">
   </head>
   <body>
-    <div id="root">
-      <h1>Hola mundo!</h1>
-    </div>
+    <header id="root">
+        <div class="contenedor">
+            <h1 class="icon-comment">MESS APP</h1>
+            <h3 >Protege TU información para que no pueda ser leída sin una clave.</h3>
+        </div>
+    </header>
+    <main>
+        <section id="banner">
+            <div>
+            <h3>Sigue los siguientes pasos:</h3>
+            <p>1. Escribe el mensaje que desees Proteger</p>
+            <p>2. Escribe un numero que sera la clave que solo Tú y tus receptores sabran </p>
+            <p>3. Presiona el boton cifrar o descifrar segun lo requieras</p>
+            </div>
+        </section>
+
+      <div id="div1" class="contenedor">
+        <form>
+          <p><label for="phrase">Escribe TU mensaje:</label></p>
+          <textarea rows="4" cols="50" id="phrase"></textarea>
+          <p><label for="offset"> Escribe TU clave secreta del mensaje</label></p>
+          <input type="number" id="offset" placeholder="numero clave secreto">
+          <button type="button" id="btn-cypher" class="icon-lock"> CIFRAR   </button>
+          <button type="button" id="btn-decypher" class="icon-lock-open">DESCIFRAR</button>
+        </form>
+      </div>
+
+      <div id="div2" class="contenedor">
+        <form>
+         <label for="result"><p id="p-result">TU mensaje <span id="p-span-result"></span> es:</p></label>
+         <textarea rows="4" cols="50" id="result"></textarea>
+         <p><label for="input-whatsapp">Deseas enviarlo por Whatsapp?</label></p>
+         <input type="number" id="input-whatsapp" placeholder="Escribe el Número de Celular">
+         <button type="button" id="btn-whatsapp" class="icon-whatsapp">Enviar por Whatsapp</button>
+         <button type="button" id="btn-copy" class="icon-docs">Copiar</button>
+         <button type="button" id="btn-home" class="icon-doc-new">Nuevo mensaje</button>
+        </form>
+      </div>
+
+    </main>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
