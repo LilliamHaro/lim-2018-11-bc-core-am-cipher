@@ -17,7 +17,7 @@ btnCypher.addEventListener('click', () => {
   let phrase = document.getElementById('phrase').value;
   let offset = document.getElementById('offset').value;
   ocultDiv1();
-  let valor= cipher.encode(phrase.toUpperCase(),offset);
+  let valor= cipher.encode(offset,phrase.toUpperCase());
 document.getElementById('p-span-result').innerHTML="CON CLAVE ";
   document.getElementById('result').value=valor;
 });
@@ -26,7 +26,7 @@ btnDeCypher.addEventListener('click', () => {
   let phrase = document.getElementById('phrase').value;
   let offset = document.getElementById('offset').value;
   ocultDiv1();
-  let valor= cipher.decode(phrase.toUpperCase(),offset);
+  let valor= cipher.decode(offset,phrase.toUpperCase());
   document.getElementById('p-span-result').innerHTML="SIN CLAVE";
   document.getElementById('result').value=valor;
 });
@@ -51,3 +51,4 @@ btnCopy.addEventListener('click', () => {
    // Copia el texto seleccionado
    document.execCommand("copy");
 });
+

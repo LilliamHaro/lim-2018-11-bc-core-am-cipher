@@ -1,6 +1,6 @@
 window.cipher = {
 //declaramos la funcion para cifrar el mensaje
-encode : function (phrase,offset){
+encode : function (offset,phrase){
   let cipherPhrase ='';
   let chartValue = 0;
       for (var i=0; i<phrase.length ; i++){
@@ -17,7 +17,7 @@ encode : function (phrase,offset){
   return cipherPhrase;
 },
 
-decode : function(phrase,offset){
+decode : function(offset,phrase){
   let cipherPhrase ='';
   let chartValue = 0;
   let numerador=0;
