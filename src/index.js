@@ -3,7 +3,9 @@ let btnDeCypher = document.getElementById('btn-decypher');
 let btnHome = document.getElementById('btn-home');
 let btnWhatsapp = document.getElementById('btn-whatsapp');
 let btnCopy = document.getElementById('btn-copy');
-
+let phrase="";
+let offset=0;
+let valor="";
 
 const ocultDiv1 =() =>{
   document.getElementById("div2").style.display='block';
@@ -14,19 +16,19 @@ const ocultDiv2 =() =>{
   document.getElementById("div2").style.display='none';
 }
 btnCypher.addEventListener('click', () => {
-  let phrase = document.getElementById('phrase').value;
-  let offset = document.getElementById('offset').value;
+  phrase = document.getElementById('phrase').value;
+  offset = document.getElementById('offset').value;
   ocultDiv1();
-  let valor= cipher.encode(offset,phrase.toUpperCase());
-document.getElementById('p-span-result').innerHTML="CON CLAVE ";
+  valor= cipher.encode(offset,phrase.toUpperCase());
+  document.getElementById('p-span-result').innerHTML="CON CLAVE ";
   document.getElementById('result').value=valor;
 });
 
 btnDeCypher.addEventListener('click', () => {
-  let phrase = document.getElementById('phrase').value;
-  let offset = document.getElementById('offset').value;
+  phrase = document.getElementById('phrase').value;
+  offset = document.getElementById('offset').value;
   ocultDiv1();
-  let valor= cipher.decode(offset,phrase.toUpperCase());
+  valor= cipher.decode(offset,phrase.toUpperCase());
   document.getElementById('p-span-result').innerHTML="SIN CLAVE";
   document.getElementById('result').value=valor;
 });
@@ -37,13 +39,11 @@ btnHome.addEventListener('click', () => {
   document.getElementById('offset').value="";
 });
 
-
 btnWhatsapp.addEventListener('click', () => {
   let celPhone = document.getElementById('input-whatsapp').value;
   celPhone="https://api.whatsapp.com/send?phone=51"+celPhone+"&text="+(document.getElementById('result').value)+"                        http://bit.ly/protected_chat";
   window.open(celPhone);
 });
-
 
 btnCopy.addEventListener('click', () => {
    var aux = document.getElementById('result');
